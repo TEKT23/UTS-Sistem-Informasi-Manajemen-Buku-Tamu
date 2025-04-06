@@ -14,7 +14,7 @@ class Auth extends CI_Controller {
 
     if ($admin && $admin->passworrd == $password) { // Belum pakai hash
       $this->session->set_userdata(['admin_logged' => TRUE, 'admin_id' => $admin->id]);
-      redirect('admin/dashboard');
+      redirect('admin/admin');
     } else {
       $this->session->set_flashdata('error', 'Username atau password salah');
       redirect('auth');

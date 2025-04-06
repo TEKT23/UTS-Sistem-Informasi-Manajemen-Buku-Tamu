@@ -14,9 +14,17 @@ class Tamu extends CI_Controller {
   }
 
   public function daftar() {
-    $data['tamu'] = $this->Tamu_model->get_all();
+    $keyword = $this->input->get('keyword');
+
+    if ($keyword) {
+        $data['tamu'] = $this->Tamu_model->search($keyword);
+    } else {
+        $data['tamu'] = $this->Tamu_model->get_all();
+    }
+
     $this->load->view('daftar_tamu', $data);
 }
+
 
   public function simpan() {
     $data = [
@@ -43,7 +51,7 @@ public function tambah()
     $this->form_validation->set_rules('alamat', 'Alamat', 'required');
 
     if ($this->form_validation->run() == FALSE) {
-        $this->load->view('tamu_view');
+        $this->load->view('tambah_tamu');
     } else {
         $data = [
             'nama' => $this->input->post('nama'),
@@ -53,7 +61,7 @@ public function tambah()
         ];
 
         $this->Tamu_model->insert($data);
-        redirect('tamu/sukses');
+        redirect('admin/admin');
     }
 }
 

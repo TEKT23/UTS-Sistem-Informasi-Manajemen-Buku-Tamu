@@ -14,11 +14,6 @@ class Admin extends CI_Controller {
   }
 
   public function index() {
-    redirect('admin/dashboard');
-  }
-
-  public function dashboard()
-{
     $data['tamu'] = $this->Tamu_model->get_all();
     $data['jumlah_today'] = $this->Tamu_model->count_today();
     $data['jumlah_bulan'] = $this->Tamu_model->count_month();
@@ -28,9 +23,10 @@ class Admin extends CI_Controller {
 }
 
 
+
   public function delete($id) {
     $this->Tamu_model->delete($id);
-    redirect('admin/dashboard');
+    redirect('admin/admin');
 }
 
 public function edit($id)
@@ -47,7 +43,7 @@ public function update($id)
     ];
 
     $this->Tamu_model->update($id, $data);
-    redirect('admin/dashboard');
+    redirect('admin/admin');
 }
 
 public function search() {

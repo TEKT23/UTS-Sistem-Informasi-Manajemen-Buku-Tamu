@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Login Admin</title>
+    <title>Login</title>
     <style>
-        body {
-            background: #f5f5f5;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    body {
+        background: #f5f5f5;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-        .login-container {
-            background: #fff;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
+    .login-container {
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #333;
-        }
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 6px;
-            color: #444;
-        }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 6px;
+        color: #444;
+    }
 
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        transition: 0.3s;
+    }
 
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            border-color: #007bff;
-            outline: none;
-        }
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #007bff;
+        outline: none;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    button {
+        width: 100%;
+        padding: 12px;
+        background: rgb(5, 17, 29);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-        button:hover {
-            background: #0056b3;
-        }
+    button:hover {
+        background: rgb(10, 35, 59);
+    }
 
-        .extra-links {
-            text-align: center;
-            margin-top: 15px;
-        }
+    .extra-links {
+        text-align: center;
+        margin-top: 15px;
+    }
 
-        .extra-links a {
-            color: #007bff;
-            text-decoration: none;
-        }
+    .extra-links a {
+        color: #007bff;
+        text-decoration: none;
+    }
 
-        .extra-links a:hover {
-            text-decoration: underline;
-        }
+    .extra-links a:hover {
+        text-decoration: underline;
+    }
 
-        .error-msg {
-            color: red;
-            font-size: 14px;
-            text-align: center;
-            margin-bottom: 15px;
-        }
+    .error-msg {
+        color: red;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
     </style>
 </head>
+
 <body>
     <div class="login-container">
-        <h2>Login Admin</h2>
+        <h2>Login</h2>
 
         <?php if ($this->session->flashdata('error')): ?>
-            <div class="error-msg"><?= $this->session->flashdata('error'); ?></div>
+        <div class="error-msg"><?= $this->session->flashdata('error'); ?></div>
         <?php endif; ?>
 
         <form action="<?= site_url('login/proses_login') ?>" method="post">
@@ -111,4 +113,5 @@
         </div>
     </div>
 </body>
+
 </html>

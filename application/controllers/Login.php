@@ -21,7 +21,7 @@ class Login extends CI_Controller {
         if ($admin) {
             $this->session->set_userdata('admin_logged_in', true);
             $this->session->set_userdata('username', $admin->username);
-            redirect('admin/dashboard');
+            redirect('admin/admin');
         } else {
             $this->session->set_flashdata('error', 'Username atau password salah');
             redirect('login');
